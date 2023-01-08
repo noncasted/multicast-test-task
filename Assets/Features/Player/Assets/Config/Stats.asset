@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3538291834f149cfa1b1c0c3a47e9030, type: 3}
+  m_Name: Stats
+  m_EditorClassIdentifier: 
+  _speed:
+    _defaultValue: 1
+    _upgradeStep: 0.5
+    _upgradeChance: 60
+  _damagePerSecond:
+    _defaultValue: 10
+    _upgradeStep: 10
+    _upgradeChance: 30
+  _attackRadius:
+    _defaultValue: 2
+    _upgradeStep: 1
+    _upgradeChance: 10
