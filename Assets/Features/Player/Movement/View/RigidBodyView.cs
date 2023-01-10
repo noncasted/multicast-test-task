@@ -15,9 +15,9 @@ namespace Features.Player.Movement.View
             _rigidbody = GetComponent<Rigidbody>();
         }
 
-        public void Move(Vector3 position)
+        public void Move(Vector3 velocity)
         {
-            _rigidbody.MovePosition(position);
+            _rigidbody.velocity = velocity;
         }
     }
 }

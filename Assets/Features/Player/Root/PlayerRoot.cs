@@ -12,6 +12,7 @@ namespace Features.Player.Root
             _stats = stats;
             
             _stats.OnAwake();
+            _stats.Publish();
         }
 
         private void OnDestroy()

@@ -1,5 +1,4 @@
 ﻿using Morpeh;
-using UnityEngine;
 
 namespace Features.Player.Movement.View
 {

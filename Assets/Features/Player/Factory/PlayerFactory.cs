@@ -1,5 +1,6 @@
 ﻿using System;
 using Features.Common.Worlds;
+using Features.Player.Attack.View;
 using Features.Player.Input;
 using Features.Player.Movement.View;
 using Features.Player.Root;
@@ -17,9 +18,7 @@ namespace Features.Player.Factory
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] private GameObject _prefab;
         
-        [SerializeField] private PlayerStatsConfig _statsConfig;
-        
-        public void Spawn(IEntityCreator entityCreator)
+        public void Spawn(IEntityCreator entityCreator, PlayerStatsConfig config)
         {
             var view = Instantiate(_prefab, _spawnPoint.position, Quaternion.identity);
             
@@ -28,14 +27,18 @@ namespace Features.Player.Factory
 
             if (view.TryGetComponent(out IPlayerRoot root) == false)
                 throw new ArgumentException();
-
-            var stats = new Stats(_statsConfig);
+            
+            if (view.TryGetComponent(out IAttackRangeView rangeView) == false)
+                throw new ArgumentException();
+            
+            var stats = new Stats(config);
             root.Construct(stats);
 
             var transformComponent = new RigidBodyComponent(rigidBodyView);
             var movementStatsComponent = new MovementStatsComponent(stats);
             var attackStatsComponent = new AttackStatsComponent(stats);
             var movementInputComponent = new MovementInputComponent();
+            var attackRangeViewComponent = new AttackRangeViewComponent(rangeView);
             
             var entity = entityCreator.Create();
             
@@ -43,6 +46,7 @@ namespace Features.Player.Factory
             entity.SetComponent(movementStatsComponent);
             entity.SetComponent(attackStatsComponent);
             entity.SetComponent(movementInputComponent);
+            entity.SetComponent(attackRangeViewComponent);
         }
     }
 }

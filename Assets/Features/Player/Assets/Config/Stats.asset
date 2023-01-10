@@ -24,3 +24,4 @@ MonoBehaviour:
     _defaultValue: 2
     _upgradeStep: 1
     _upgradeChance: 10
+  _maxTargets: 3

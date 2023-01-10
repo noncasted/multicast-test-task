@@ -3,6 +3,7 @@ using System.Linq;
 using Features.Player.StatsData.Abstract;
 using Features.Player.StatsData.Config;
 using UniRx;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Features.Player.StatsData
@@ -43,6 +44,12 @@ namespace Features.Player.StatsData
             _upgradeClickListener?.Dispose();
         }
 
+        public void Publish()
+        {
+            var upgradedEvent = new StatsUpgradedEvent(_speed.Value, _damagePerSecond.Value, _attackRadius.Value);
+            MessageBroker.Default.Publish(upgradedEvent);
+        }
+
         private void OnUpgradeClicked(UpgradeClickEvent data)
         {
             var random = Random.Range(0f, 100f);
@@ -52,8 +59,19 @@ namespace Features.Player.StatsData
                 if (stat.IsUpgradable(random) == false)
                     continue;
                 
-                stat.Upgrade();
+                Upgrade(stat);
+                return;
             }
+
+            Upgrade(_stats[^1]);
+        }
+
+        private void Upgrade(StatHandle stats)
+        {
+            stats.Upgrade();
+                
+            var upgradedEvent = new StatsUpgradedEvent(_speed.Value, _damagePerSecond.Value, _attackRadius.Value);
+            MessageBroker.Default.Publish(upgradedEvent);
         }
     }
 }

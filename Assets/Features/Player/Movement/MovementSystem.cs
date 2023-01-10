@@ -29,9 +29,8 @@ namespace Features.Player.Movement
                 ref var input = ref entity.GetComponent<MovementInputComponent>();
 
                 var direction = new Vector3(input.Input.x, 0f, input.Input.y);
-                var move = rigidBody.View.Position + direction * stats.Speed * deltaTime;
 
-                rigidBody.View.Move(move);
+                rigidBody.View.Move(direction * stats.Speed);
             }
         }
     }

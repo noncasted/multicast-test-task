@@ -6,6 +6,6 @@ namespace Features.Player.Movement.View
     {
         Vector3 Position { get; }
         
-        void Move(Vector3 position);
+        void Move(Vector3 velocity);
     }
 }

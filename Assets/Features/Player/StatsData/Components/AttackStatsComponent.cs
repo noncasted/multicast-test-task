@@ -10,6 +10,6 @@ namespace Features.Player.StatsData.Components
             Stats = stats;
         }
         
-        private readonly IAttackStats Stats;
+        public readonly IAttackStats Stats;
     }
 }

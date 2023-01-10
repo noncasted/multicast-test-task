@@ -38,7 +38,6 @@ namespace Features.Player.Input
 
             foreach (var entity in filter)
             {
-                Debug.Log("Set movement input");
                 ref var inputMovable = ref entity.GetComponent<MovementInputComponent>();
                 inputMovable.OnInput(_movement);
             }
@@ -47,7 +46,6 @@ namespace Features.Player.Input
         private void OnMovementPerformed(InputAction.CallbackContext context)
         {
             var value = context.ReadValue<Vector2>();
-            Debug.Log($"On input: {value}");
 
             _movement = value;
         }
