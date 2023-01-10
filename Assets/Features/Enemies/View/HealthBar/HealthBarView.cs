@@ -1,11 +1,10 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Features.Enemies.View
+namespace Features.Enemies.View.HealthBar
 {
     public class HealthBarView : MonoBehaviour, IHealthBarView
     {
-        [SerializeField] private Transform _bar;
+        [SerializeField] private UnityEngine.Transform _bar;
 
         private Vector3 _baseScale;
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Features.Enemies.DamageReceiving;
 using Features.Enemies.View;
+using Features.Enemies.View.Transform;
 using Features.Player.Movement.View;
 using Features.Player.StatsData.Components;
 using Morpeh;

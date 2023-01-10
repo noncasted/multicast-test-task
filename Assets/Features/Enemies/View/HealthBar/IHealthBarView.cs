@@ -1,4 +1,4 @@
-﻿namespace Features.Enemies.View
+﻿namespace Features.Enemies.View.HealthBar
 {
     public interface IHealthBarView
     {

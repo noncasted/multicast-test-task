@@ -2,6 +2,9 @@
 using Features.Enemies.DamageReceiving;
 using Features.Enemies.Factory.SpawnPoints;
 using Features.Enemies.View;
+using Features.Enemies.View.HealthBar;
+using Features.Enemies.View.Object;
+using Features.Enemies.View.Transform;
 using Morpeh;
 using UnityEngine;
 

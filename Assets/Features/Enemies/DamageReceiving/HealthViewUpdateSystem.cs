@@ -1,4 +1,5 @@
 ﻿using Features.Enemies.View;
+using Features.Enemies.View.HealthBar;
 using Morpeh;
 using Unity.IL2CPP.CompilerServices;
 using UnityEngine;

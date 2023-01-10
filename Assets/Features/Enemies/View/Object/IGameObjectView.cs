@@ -1,4 +1,4 @@
-﻿namespace Features.Enemies.View
+﻿namespace Features.Enemies.View.Object
 {
     public interface IGameObjectView
     {

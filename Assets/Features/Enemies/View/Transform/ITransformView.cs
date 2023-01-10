@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Features.Enemies.View
+namespace Features.Enemies.View.Transform
 {
     public interface ITransformView
     {

@@ -1,6 +1,6 @@
 ﻿using Morpeh;
 
-namespace Features.Enemies.View
+namespace Features.Enemies.View.HealthBar
 {
     public readonly struct HealthBarComponent : IComponent
     {

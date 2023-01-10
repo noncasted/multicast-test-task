@@ -1,5 +1,6 @@
 ﻿using Features.Enemies.Factory;
 using Features.Enemies.View;
+using Features.Enemies.View.Object;
 using Morpeh;
 using UniRx;
 using Unity.IL2CPP.CompilerServices;

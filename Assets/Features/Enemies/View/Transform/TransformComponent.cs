@@ -1,6 +1,6 @@
 ﻿using Morpeh;
 
-namespace Features.Enemies.View
+namespace Features.Enemies.View.Transform
 {       
     public readonly struct TransformComponent : IComponent
     {
